@@ -1,3 +1,4 @@
+// ========== NAVEGACIÓN ==========
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const tabs = [
@@ -20,8 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.appendChild(btn);
   });
 
-  // Activar la primera por defecto
   activarTab('guia');
+
+  // ---- TOGGLE MENÚ MÓVIL ----
+  const menuToggle = document.getElementById('menuToggle');
+  const sidebar = document.getElementById('sidebar');
+
+  if (menuToggle && sidebar) {
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    // Cerrar menú al seleccionar una pestaña en móvil
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+  }
 });
 
 function activarTab(id) {
