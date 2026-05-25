@@ -9,7 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 <body>
-  <!-- BOTÓN HAMBURGUESA PARA MÓVILES -->
   <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
@@ -19,528 +18,460 @@
     <nav id="nav"></nav>
   </aside>
   <main class="main-content">
+    <!-- ===== GUÍA ===== -->
     <section id="guia" class="tab-content active">
       <div class="glass-strong card">
-  <div style="display:flex; align-items:flex-start; gap:1rem;">
-    <div style="background: var(--primary); color:white; padding:0.75rem; border-radius:12px; font-size:1.5rem;">
-      💡
-    </div>
-    <div>
-      <h1 style="color:var(--primary)">Guía de Usuario</h1>
-      <p class="text-muted">
-        Bienvenido a <strong>PresupuestoPro</strong>, el sistema profesional para la elaboración de presupuestos de construcción. Siga los 8 pasos en la barra lateral para crear un presupuesto completo bajo normativa NSR-10, POT Barranquilla y NTC aplicables.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div style="display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem;">
-  <!-- Paso 1 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">📘</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 1</div>
-    </div>
-    <div>
-      <h3>Guía de Usuario</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Familiarícese con la interfaz y los módulos del aplicativo. Cada paso está diseñado para guiarlo en la elaboración profesional de presupuestos de construcción.</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>Navegue usando el menú lateral.</li>
-        <li>Cada módulo se completa de forma secuencial.</li>
-        <li>Los datos se guardan automáticamente en su navegador.</li>
-        <li>Al finalizar, podrá generar un informe PDF profesional.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Paso 2 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">🏗️</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 2</div>
-    </div>
-    <div>
-      <h3>Carátula del Proyecto</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Complete los datos generales. El campo "Área construida (m²)" es clave para el indicador de costo por m².</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>Use la normativa: NSR-10, POT Barranquilla, NTC.</li>
-        <li>El costo por m² se calcula automáticamente con los costos directos.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Paso 3 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">🔍</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 3</div>
-    </div>
-    <div>
-      <h3>Anteproyecto – Estudios Previos</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Registre los costos de estudios técnicos (topografía, suelos, diseños, licencias). Son independientes del presupuesto de construcción.</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>Agregue o elimine estudios según su proyecto.</li>
-        <li>El total solo suma los estudios marcados como "Incluir".</li>
-        <li>Estos costos no forman parte del AIU.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Paso 4 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">🧮</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 4</div>
-    </div>
-    <div>
-      <h3>Cómputos Métricos</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Ingrese materiales y actividades con cantidad, precio unitario y % de desperdicio. Use 🔍 para consultar precios de referencia en Barranquilla.</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>Fórmula automática: Cantidad × Precio × (1 + Desperdicio/100).</li>
-        <li>Desperdicio por defecto: 5%.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Paso 5 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">📋</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 5</div>
-    </div>
-    <div>
-      <h3>Capítulos – Costos Directos</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Ingrese los grandes rubros de construcción. El sistema calcula el porcentaje de cada capítulo sobre el total.</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>El total de esta sección es la BASE para el cálculo del AIU.</li>
-        <li>Puede usar los capítulos sugeridos o personalizarlos.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Paso 6 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">⚙️</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 6</div>
-    </div>
-    <div>
-      <h3>Costos Indirectos – AIU</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Ajuste los porcentajes de Administración, Imprevistos y Utilidad. El cálculo se hace sobre el total de costos directos.</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>Complete el detalle de administración para sustentar el %.</li>
-        <li>Aumente Imprevistos en proyectos de mayor riesgo.</li>
-        <li>Porcentajes sugeridos: A: 8-12%, I: 1-5%, U: 5-10%.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Paso 7 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">📊</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 7</div>
-    </div>
-    <div>
-      <h3>Resumen, Gráficas y Cronograma</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Revise el resumen general y analice visualmente la distribución de costos. Configure el cronograma con fecha de inicio y duración.</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>El diagrama de Gantt y la curva S se generan automáticamente.</li>
-        <li>Use "Actualizar" para refrescar las gráficas.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Paso 8 -->
-  <div class="glass card" style="display:flex; gap:1rem; align-items:flex-start;">
-    <div style="background:rgba(26,109,94,0.1); color:var(--primary); padding:0.75rem; border-radius:12px; text-align:center; min-width:60px;">
-      <div style="font-size:1.3rem;">📑</div>
-      <div style="font-size:0.7rem; font-weight:bold;">Paso 8</div>
-    </div>
-    <div>
-      <h3>Generar Informe PDF</h3>
-      <p class="text-muted" style="font-size:0.9rem;">Acceda a la pestaña Informe para revisar el documento final. Use el botón "Imprimir / Descargar PDF" y en el diálogo seleccione "Guardar como PDF".</p>
-      <ul style="font-size:0.85rem; margin-top:0.5rem; padding-left:1.2rem;">
-        <li>El informe incluye todas las secciones.</li>
-        <li>La vista previa es la misma que se imprimirá.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="glass card" style="background:rgba(26,109,94,0.05); border-color:rgba(26,109,94,0.2); margin-top:1.5rem; text-align:center;">
-  <p style="color:var(--primary); font-size:0.9rem;">
-    <strong>Consejo:</strong> Complete los módulos en orden. Puede regresar a cualquier paso para editar los datos; se guardan automáticamente en su navegador. Cuando haya terminado, diríjase a la sección <strong>Informe</strong> para generar el documento PDF final.
-  </p>
-</div>
-    </section>
-    <section id="caratula" class="tab-content">
-      <div class="glass-strong card">
-  <div class="card-header">
-    <div>
-      <h2>🏗️ Carátula del Proyecto</h2>
-      <p class="text-muted">Datos generales y normativa aplicable (NSR-10 · POT Barranquilla · NTC)</p>
-    </div>
-    <div class="glass card text-center" style="min-width:180px">
-      <div class="text-muted" style="font-size:0.8rem">Costo estimado / m²</div>
-      <div style="font-size:1.5rem; font-weight:bold; color:var(--primary)" id="costoPorM2">$0</div>
-      <div class="text-muted" style="font-size:0.7rem">Basado en área construida</div>
-    </div>
-  </div>
-
-  <form id="formCaratula">
-    <div class="grid-2">
-      <div class="glass card">
-        <h3>Información General</h3>
-        <div class="form-group">
-          <label>Nombre del Proyecto</label>
-          <input type="text" id="nombreProyecto" placeholder="Ej: Edificio Residencial Torres del Parque" required>
-        </div>
-        <div class="form-group">
-          <label>Ubicación</label>
-          <input type="text" id="ubicacion" placeholder="Dirección, Barrio, Ciudad" required>
-        </div>
-        <div class="form-group">
-          <label>Propietario / Cliente</label>
-          <input type="text" id="propietario" placeholder="Nombre o razón social" required>
-        </div>
-        <div class="form-group">
-          <label>Constructor / Contratista</label>
-          <input type="text" id="constructor" placeholder="Empresa constructora" required>
-        </div>
-        <div class="form-group">
-          <label>Fecha del Proyecto</label>
-          <input type="date" id="fechaProyecto" required>
+        <div class="guide-header">
+          <div class="guide-icon">💡</div>
+          <div>
+            <h1 class="guide-title">Guía de Usuario</h1>
+            <p class="text-muted">
+              Bienvenido a <strong>PresupuestoPro</strong>, el sistema profesional para la elaboración de presupuestos de construcción. Siga los 8 pasos en la barra lateral para crear un presupuesto completo bajo normativa NSR-10, POT Barranquilla y NTC aplicables.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div class="glass card">
-          <h3>Área y Normativa</h3>
-          <div class="form-group">
-            <label>Área Construida (m²)</label>
-            <input type="number" id="areaConstruida" step="0.01" min="0" placeholder="0.00" required>
+      <div class="guide-steps">
+        <!-- Paso 1 -->
+        <div class="glass card guide-step">
+          <div class="step-badge">📘<span>Paso 1</span></div>
+          <div>
+            <h3>Guía de Usuario</h3>
+            <p class="step-text">Familiarícese con la interfaz y los módulos del aplicativo. Cada paso está diseñado para guiarlo en la elaboración profesional de presupuestos de construcción.</p>
+            <ul class="step-list">
+              <li>Navegue usando el menú lateral.</li>
+              <li>Cada módulo se completa de forma secuencial.</li>
+              <li>Los datos se guardan automáticamente en su navegador.</li>
+              <li>Al finalizar, podrá generar un informe PDF profesional.</li>
+            </ul>
           </div>
-          <div class="form-group">
-            <label>Normativa Aplicable</label>
-            <div class="flex-between" style="flex-wrap:wrap">
-              <label style="display:flex; align-items:center; gap:0.25rem; font-weight:400">
-                <input type="checkbox" class="normativa" value="NSR-10" checked> NSR-10
-              </label>
-              <label style="display:flex; align-items:center; gap:0.25rem; font-weight:400">
-                <input type="checkbox" class="normativa" value="POT Barranquilla" checked> POT Barranquilla
-              </label>
-              <label style="display:flex; align-items:center; gap:0.25rem; font-weight:400">
-                <input type="checkbox" class="normativa" value="NTC Aplicables" checked> NTC Aplicables
-              </label>
+        </div>
+        <!-- Pasos 2-8 (misma estructura) -->
+        <div class="glass card guide-step">
+          <div class="step-badge">🏗️<span>Paso 2</span></div>
+          <div>
+            <h3>Carátula del Proyecto</h3>
+            <p class="step-text">Complete los datos generales. El campo "Área construida (m²)" es clave para el indicador de costo por m².</p>
+            <ul class="step-list">
+              <li>Use la normativa: NSR-10, POT Barranquilla, NTC.</li>
+              <li>El costo por m² se calcula automáticamente con los costos directos.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card guide-step">
+          <div class="step-badge">🔍<span>Paso 3</span></div>
+          <div>
+            <h3>Anteproyecto – Estudios Previos</h3>
+            <p class="step-text">Registre los costos de estudios técnicos (topografía, suelos, diseños, licencias). Son independientes del presupuesto de construcción.</p>
+            <ul class="step-list">
+              <li>Agregue o elimine estudios según su proyecto.</li>
+              <li>El total solo suma los estudios marcados como "Incluir".</li>
+              <li>Estos costos no forman parte del AIU.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card guide-step">
+          <div class="step-badge">🧮<span>Paso 4</span></div>
+          <div>
+            <h3>Cómputos Métricos</h3>
+            <p class="step-text">Ingrese materiales y actividades con cantidad, precio unitario y % de desperdicio. Use 🔍 para consultar precios de referencia en Barranquilla.</p>
+            <ul class="step-list">
+              <li>Fórmula automática: Cantidad × Precio × (1 + Desperdicio/100).</li>
+              <li>Desperdicio por defecto: 5%.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card guide-step">
+          <div class="step-badge">📋<span>Paso 5</span></div>
+          <div>
+            <h3>Capítulos – Costos Directos</h3>
+            <p class="step-text">Ingrese los grandes rubros de construcción. El sistema calcula el porcentaje de cada capítulo sobre el total.</p>
+            <ul class="step-list">
+              <li>El total de esta sección es la BASE para el cálculo del AIU.</li>
+              <li>Puede usar los capítulos sugeridos o personalizarlos.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card guide-step">
+          <div class="step-badge">⚙️<span>Paso 6</span></div>
+          <div>
+            <h3>Costos Indirectos – AIU</h3>
+            <p class="step-text">Ajuste los porcentajes de Administración, Imprevistos y Utilidad. El cálculo se hace sobre el total de costos directos.</p>
+            <ul class="step-list">
+              <li>Complete el detalle de administración para sustentar el %.</li>
+              <li>Aumente Imprevistos en proyectos de mayor riesgo.</li>
+              <li>Porcentajes sugeridos: A: 8-12%, I: 1-5%, U: 5-10%.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card guide-step">
+          <div class="step-badge">📊<span>Paso 7</span></div>
+          <div>
+            <h3>Resumen, Gráficas y Cronograma</h3>
+            <p class="step-text">Revise el resumen general y analice visualmente la distribución de costos. Configure el cronograma con fecha de inicio y duración.</p>
+            <ul class="step-list">
+              <li>El diagrama de Gantt y la curva S se generan automáticamente.</li>
+              <li>Use "Actualizar" para refrescar las gráficas.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card guide-step">
+          <div class="step-badge">📑<span>Paso 8</span></div>
+          <div>
+            <h3>Generar Informe PDF</h3>
+            <p class="step-text">Acceda a la pestaña Informe para revisar el documento final. Use el botón "Imprimir / Descargar PDF" y en el diálogo seleccione "Guardar como PDF".</p>
+            <ul class="step-list">
+              <li>El informe incluye todas las secciones.</li>
+              <li>La vista previa es la misma que se imprimirá.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass card guide-footer">
+        <p>
+          <strong>Consejo:</strong> Complete los módulos en orden. Puede regresar a cualquier paso para editar los datos; se guardan automáticamente en su navegador. Cuando haya terminado, diríjase a la sección <strong>Informe</strong> para generar el documento PDF final.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CARÁTULA ===== -->
+    <section id="caratula" class="tab-content">
+      <div class="glass-strong card">
+        <div class="card-header">
+          <div>
+            <h2>🏗️ Carátula del Proyecto</h2>
+            <p class="text-muted">Datos generales y normativa aplicable (NSR-10 · POT Barranquilla · NTC)</p>
+          </div>
+          <div class="stats-card glass card text-center">
+            <div class="stats-label">Costo estimado / m²</div>
+            <div class="stats-value" id="costoPorM2">$0</div>
+            <div class="stats-sub">Basado en área construida</div>
+          </div>
+        </div>
+
+        <form id="formCaratula">
+          <div class="grid-2">
+            <div class="glass card">
+              <h3>Información General</h3>
+              <div class="form-group">
+                <label>Nombre del Proyecto</label>
+                <input type="text" id="nombreProyecto" placeholder="Ej: Edificio Residencial Torres del Parque" required>
+              </div>
+              <div class="form-group">
+                <label>Ubicación</label>
+                <input type="text" id="ubicacion" placeholder="Dirección, Barrio, Ciudad" required>
+              </div>
+              <div class="form-group">
+                <label>Propietario / Cliente</label>
+                <input type="text" id="propietario" placeholder="Nombre o razón social" required>
+              </div>
+              <div class="form-group">
+                <label>Constructor / Contratista</label>
+                <input type="text" id="constructor" placeholder="Empresa constructora" required>
+              </div>
+              <div class="form-group">
+                <label>Fecha del Proyecto</label>
+                <input type="date" id="fechaProyecto" required>
+              </div>
+            </div>
+
+            <div>
+              <div class="glass card">
+                <h3>Área y Normativa</h3>
+                <div class="form-group">
+                  <label>Área Construida (m²)</label>
+                  <input type="number" id="areaConstruida" step="0.01" min="0" placeholder="0.00" required>
+                </div>
+                <div class="form-group">
+                  <label>Normativa Aplicable</label>
+                  <div class="normativas-grid">
+                    <label><input type="checkbox" class="normativa" value="NSR-10" checked> NSR-10</label>
+                    <label><input type="checkbox" class="normativa" value="POT Barranquilla" checked> POT Barranquilla</label>
+                    <label><input type="checkbox" class="normativa" value="NTC Aplicables" checked> NTC Aplicables</label>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-between mt-2">
+                <button type="button" class="btn btn-ghost" id="limpiarCaratula">🗑️ Limpiar</button>
+                <button type="submit" class="btn btn-primary">💾 Guardar Carátula</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="glass card text-muted nota-card">
+          <strong>Nota:</strong> El costo por m² se calculará automáticamente al completar los costos directos. Esta información es referencial y cumple con la normativa NSR-10, POT Barranquilla y NTC aplicables.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ANTEPROYECTO ===== -->
+    <section id="anteproyecto" class="tab-content">
+      <div class="glass-strong card">
+        <div class="card-header">
+          <div>
+            <h2>🔍 Anteproyecto – Estudios Previos</h2>
+            <p class="text-muted">Costos independientes del presupuesto de construcción. El cliente debe conocer estos valores antes de la obra.</p>
+          </div>
+          <div class="stats-card glass card text-center">
+            <div class="stats-label">Total Estudios Previos</div>
+            <div class="stats-value" id="totalEstudiosPrevios">$0</div>
+            <div class="stats-sub" id="cantEstudiosIncluidos">0 estudios incluidos</div>
+          </div>
+        </div>
+
+        <div class="glass card">
+          <div id="listaEstudios"></div>
+          <button type="button" class="btn btn-ghost" id="agregarEstudio">➕ Agregar estudio adicional</button>
+        </div>
+
+        <div class="flex-between mt-2">
+          <button type="button" class="btn btn-ghost" id="restablecerEstudios">🔄 Restablecer</button>
+          <button type="button" class="btn btn-primary" id="guardarEstudios">💾 Guardar Estudios</button>
+        </div>
+
+        <div class="glass card text-muted nota-card">
+          <strong>Importante:</strong> Los estudios previos no forman parte del AIU ni de los costos directos de construcción. Se presentan por separado.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CÓMPUTOS MÉTRICOS ===== -->
+    <section id="computos" class="tab-content">
+      <div class="glass-strong card">
+        <div class="card-header">
+          <div>
+            <h2>🧮 Cómputos Métricos</h2>
+            <p class="text-muted">Ingrese materiales y actividades. Use 🔍 para consultar precios de referencia en Barranquilla.</p>
+          </div>
+          <div class="stats-card glass card text-center">
+            <div class="stats-label">Total Cómputos Métricos</div>
+            <div class="stats-value" id="totalComputos">$0</div>
+            <div class="stats-sub" id="cantItemsComputos">0 ítems</div>
+          </div>
+        </div>
+
+        <div class="glass card">
+          <div class="table-responsive">
+            <table id="tablaComputos">
+              <thead>
+                <tr>
+                  <th>Descripción</th><th>Unidad</th><th>Cantidad</th><th>Precio Unit. ($)</th><th>% Desp.</th><th>Total</th><th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="bodyComputos"></tbody>
+            </table>
+          </div>
+          <button type="button" class="btn btn-ghost" id="agregarItemComputo">➕ Agregar ítem</button>
+        </div>
+
+        <div class="flex-between mt-2">
+          <button type="button" class="btn btn-ghost" id="limpiarComputos">🗑️ Limpiar todo</button>
+          <button type="button" class="btn btn-primary" id="guardarComputos">💾 Guardar Cómputos</button>
+        </div>
+
+        <div class="glass card text-muted nota-card">
+          <strong>Nota:</strong> El total de cada ítem se calcula como: Cantidad × Precio × (1 + %Desperdicio/100). El desperdicio por defecto es 5%.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CAPÍTULOS ===== -->
+    <section id="capitulos" class="tab-content">
+      <div class="glass-strong card">
+        <div class="card-header">
+          <div>
+            <h2>📋 Capítulos – Costos Directos</h2>
+            <p class="text-muted">Ingrese los capítulos del proceso constructivo. El total será la BASE del AIU.</p>
+          </div>
+          <div class="stats-card glass card text-center">
+            <div class="stats-label">Total Costos Directos</div>
+            <div class="stats-value" id="totalCapitulos">$0</div>
+            <div class="stats-sub">Base para cálculo AIU</div>
+          </div>
+        </div>
+
+        <div class="glass card">
+          <div class="table-responsive">
+            <table id="tablaCapitulos">
+              <thead>
+                <tr>
+                  <th>Nombre del Capítulo</th><th>Valor ($ COP)</th><th>% del Total</th><th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="bodyCapitulos"></tbody>
+            </table>
+          </div>
+          <button type="button" class="btn btn-ghost" id="agregarCapitulo">➕ Agregar capítulo</button>
+        </div>
+
+        <div class="flex-between mt-2">
+          <button type="button" class="btn btn-ghost" id="limpiarCapitulos">🗑️ Limpiar todo</button>
+          <button type="button" class="btn btn-primary" id="guardarCapitulos">💾 Guardar Capítulos</button>
+        </div>
+
+        <div class="glass card text-muted nota-card">
+          <strong>Importante:</strong> El total de esta sección es la BASE para el cálculo de Administración, Imprevistos y Utilidad (AIU). Verifique que los valores sean correctos antes de pasar al siguiente paso.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AIU ===== -->
+    <section id="aiu" class="tab-content">
+      <div class="glass-strong card">
+        <div class="card-header">
+          <div>
+            <h2>⚙️ Costos Indirectos – AIU</h2>
+            <p class="text-muted">Ajuste los porcentajes de Administración, Imprevistos y Utilidad según el proyecto.</p>
+          </div>
+          <div class="stats-card glass card text-center">
+            <div class="stats-label">Costo Total del Proyecto</div>
+            <div class="stats-value" id="costoTotalProyecto">$0</div>
+            <div class="stats-sub">Costos directos + AIU</div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="glass card">
+            <h3>Administración (A)</h3>
+            <div class="form-group">
+              <label>Porcentaje %</label>
+              <input type="number" id="porcAdmin" value="8" min="0" max="30" step="0.1">
+            </div>
+            <div class="calc-box">
+              <div class="text-muted text-xs">Valor calculado</div>
+              <div class="calc-value" id="valorAdmin">$0</div>
+            </div>
+          </div>
+          <div class="glass card">
+            <h3>Imprevistos (I)</h3>
+            <div class="form-group">
+              <label>Porcentaje %</label>
+              <input type="number" id="porcImprevistos" value="3" min="0" max="15" step="0.1">
+            </div>
+            <div class="calc-box">
+              <div class="text-muted text-xs">Valor calculado</div>
+              <div class="calc-value" id="valorImprevistos">$0</div>
+            </div>
+            <p class="text-muted text-xs mt-1">Aumente este % en proyectos de mayor riesgo.</p>
+          </div>
+          <div class="glass card">
+            <h3>Utilidad (U)</h3>
+            <div class="form-group">
+              <label>Porcentaje %</label>
+              <input type="number" id="porcUtilidad" value="5" min="0" max="20" step="0.1">
+            </div>
+            <div class="calc-box">
+              <div class="text-muted text-xs">Valor calculado</div>
+              <div class="calc-value" id="valorUtilidad">$0</div>
             </div>
           </div>
         </div>
+
+        <div class="glass card">
+          <div class="grid-4 text-center">
+            <div><div class="text-muted text-xs">Total Costos Directos</div><div class="font-bold" id="resumenCostosDirectos">$0</div></div>
+            <div><div class="text-muted text-xs">Total AIU</div><div class="font-bold color-accent" id="resumenTotalAIU">$0</div></div>
+            <div><div class="text-muted text-xs">Costo Total Proyecto</div><div class="font-bold color-primary" id="resumenCostoTotal">$0</div></div>
+            <div><div class="text-muted text-xs">AIU sobre C. Directos</div><div class="font-bold" id="resumenPorcentajeAIU">0%</div></div>
+          </div>
+        </div>
+
+        <div class="glass card">
+          <h3>Detalle de Administración (sustento del %)</h3>
+          <textarea id="detalleAdmin" rows="3" class="w-full" placeholder="Describa los conceptos incluidos: personal, oficina, servicios públicos, etc."></textarea>
+        </div>
+
         <div class="flex-between mt-2">
-          <button type="button" class="btn btn-ghost" id="limpiarCaratula">🗑️ Limpiar</button>
-          <button type="submit" class="btn btn-primary">💾 Guardar Carátula</button>
+          <button type="button" class="btn btn-ghost" id="limpiarAIU">🗑️ Limpiar</button>
+          <button type="button" class="btn btn-primary" id="guardarAIU">💾 Guardar AIU</button>
+        </div>
+
+        <div class="glass card text-muted nota-card">
+          <strong>Nota:</strong> El AIU se calcula sobre el total de Costos Directos. Porcentajes sugeridos: Administración 8-12%, Imprevistos 1-5%, Utilidad 5-10%. Ajuste según el tipo y complejidad del proyecto.
         </div>
       </div>
-    </div>
-  </form>
-
-  <div class="glass card text-muted" style="font-size:0.85rem">
-    <strong>Nota:</strong> El costo por m² se calculará automáticamente al completar los costos directos. Esta información es referencial y cumple con la normativa NSR-10, POT Barranquilla y NTC aplicables.
-  </div>
-</div>
     </section>
 
-    <section id="anteproyecto" class="tab-content">
-      <div class="glass-strong card">
-  <div class="card-header">
-    <div>
-      <h2>🔍 Anteproyecto – Estudios Previos</h2>
-      <p class="text-muted">Costos independientes del presupuesto de construcción. El cliente debe conocer estos valores antes de la obra.</p>
-    </div>
-    <div class="glass card text-center" style="min-width:180px">
-      <div class="text-muted" style="font-size:0.8rem">Total Estudios Previos</div>
-      <div style="font-size:1.5rem; font-weight:bold; color:var(--primary)" id="totalEstudiosPrevios">$0</div>
-      <div class="text-muted" style="font-size:0.7rem" id="cantEstudiosIncluidos">0 estudios incluidos</div>
-    </div>
-  </div>
-
-  <div class="glass card">
-    <div id="listaEstudios">
-      <!-- Los estudios se generan dinámicamente -->
-    </div>
-    <button type="button" class="btn btn-ghost" id="agregarEstudio">➕ Agregar estudio adicional</button>
-  </div>
-
-  <div class="flex-between mt-2">
-    <button type="button" class="btn btn-ghost" id="restablecerEstudios">🔄 Restablecer</button>
-    <button type="button" class="btn btn-primary" id="guardarEstudios">💾 Guardar Estudios</button>
-  </div>
-
-  <div class="glass card text-muted" style="font-size:0.85rem">
-    <strong>Importante:</strong> Los estudios previos no forman parte del AIU ni de los costos directos de construcción. Se presentan por separado.
-  </div>
-</div>
-    </section>
-
-    <section id="computos" class="tab-content">
-      <div class="glass-strong card">
-  <div class="card-header">
-    <div>
-      <h2>🧮 Cómputos Métricos</h2>
-      <p class="text-muted">Ingrese materiales y actividades. Use 🔍 para consultar precios de referencia en Barranquilla.</p>
-    </div>
-    <div class="glass card text-center" style="min-width:180px">
-      <div class="text-muted" style="font-size:0.8rem">Total Cómputos Métricos</div>
-      <div style="font-size:1.5rem; font-weight:bold; color:var(--primary)" id="totalComputos">$0</div>
-      <div class="text-muted" style="font-size:0.7rem" id="cantItemsComputos">0 ítems</div>
-    </div>
-  </div>
-
-  <div class="glass card">
-    <div style="overflow-x:auto">
-      <table id="tablaComputos">
-        <thead>
-          <tr>
-            <th>Descripción</th>
-            <th>Unidad</th>
-            <th>Cantidad</th>
-            <th>Precio Unit. ($)</th>
-            <th>% Desp.</th>
-            <th>Total</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="bodyComputos">
-          <!-- Filas dinámicas -->
-        </tbody>
-      </table>
-    </div>
-    <button type="button" class="btn btn-ghost" id="agregarItemComputo">➕ Agregar ítem</button>
-  </div>
-
-  <div class="flex-between mt-2">
-    <button type="button" class="btn btn-ghost" id="limpiarComputos">🗑️ Limpiar todo</button>
-    <button type="button" class="btn btn-primary" id="guardarComputos">💾 Guardar Cómputos</button>
-  </div>
-
-  <div class="glass card text-muted" style="font-size:0.85rem">
-    <strong>Nota:</strong> El total de cada ítem se calcula como: Cantidad × Precio × (1 + %Desperdicio/100). El desperdicio por defecto es 5%.
-  </div>
-</div>
-    </section>
-    <section id="capitulos" class="tab-content">
-      <div class="glass-strong card">
-  <div class="card-header">
-    <div>
-      <h2>📋 Capítulos – Costos Directos</h2>
-      <p class="text-muted">Ingrese los capítulos del proceso constructivo. El total será la BASE del AIU.</p>
-    </div>
-    <div class="glass card text-center" style="min-width:180px">
-      <div class="text-muted" style="font-size:0.8rem">Total Costos Directos</div>
-      <div style="font-size:1.5rem; font-weight:bold; color:var(--primary)" id="totalCapitulos">$0</div>
-      <div class="text-muted" style="font-size:0.7rem">Base para cálculo AIU</div>
-    </div>
-  </div>
-
-  <div class="glass card">
-    <div style="overflow-x:auto">
-      <table id="tablaCapitulos">
-        <thead>
-          <tr>
-            <th>Nombre del Capítulo</th>
-            <th>Valor ($ COP)</th>
-            <th>% del Total</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="bodyCapitulos">
-          <!-- Filas dinámicas -->
-        </tbody>
-      </table>
-    </div>
-    <button type="button" class="btn btn-ghost" id="agregarCapitulo">➕ Agregar capítulo</button>
-  </div>
-
-  <div class="flex-between mt-2">
-    <button type="button" class="btn btn-ghost" id="limpiarCapitulos">🗑️ Limpiar todo</button>
-    <button type="button" class="btn btn-primary" id="guardarCapitulos">💾 Guardar Capítulos</button>
-  </div>
-
-  <div class="glass card text-muted" style="font-size:0.85rem">
-    <strong>Importante:</strong> El total de esta sección es la BASE para el cálculo de Administración, Imprevistos y Utilidad (AIU). Verifique que los valores sean correctos antes de pasar al siguiente paso.
-  </div>
-</div>
-    </section>
-    <section id="aiu" class="tab-content">
-      <div class="glass-strong card">
-  <div class="card-header">
-    <div>
-      <h2>⚙️ Costos Indirectos – AIU</h2>
-      <p class="text-muted">Ajuste los porcentajes de Administración, Imprevistos y Utilidad según el proyecto.</p>
-    </div>
-    <div class="glass card text-center" style="min-width:200px">
-      <div class="text-muted" style="font-size:0.8rem">Costo Total del Proyecto</div>
-      <div style="font-size:1.5rem; font-weight:bold; color:var(--primary)" id="costoTotalProyecto">$0</div>
-      <div class="text-muted" style="font-size:0.7rem">Costos directos + AIU</div>
-    </div>
-  </div>
-
-  <div class="grid-3">
-    <div class="glass card">
-      <h3>Administración (A)</h3>
-      <div class="form-group">
-        <label>Porcentaje %</label>
-        <input type="number" id="porcAdmin" value="8" min="0" max="30" step="0.1">
-      </div>
-      <div style="background:rgba(255,255,255,0.5); padding:0.5rem; border-radius:8px">
-        <div class="text-muted" style="font-size:0.75rem">Valor calculado</div>
-        <div style="font-weight:bold; color:var(--primary)" id="valorAdmin">$0</div>
-      </div>
-    </div>
-    <div class="glass card">
-      <h3>Imprevistos (I)</h3>
-      <div class="form-group">
-        <label>Porcentaje %</label>
-        <input type="number" id="porcImprevistos" value="3" min="0" max="15" step="0.1">
-      </div>
-      <div style="background:rgba(255,255,255,0.5); padding:0.5rem; border-radius:8px">
-        <div class="text-muted" style="font-size:0.75rem">Valor calculado</div>
-        <div style="font-weight:bold; color:var(--primary)" id="valorImprevistos">$0</div>
-      </div>
-      <p class="text-muted" style="font-size:0.7rem; margin-top:0.5rem">Aumente este % en proyectos de mayor riesgo.</p>
-    </div>
-    <div class="glass card">
-      <h3>Utilidad (U)</h3>
-      <div class="form-group">
-        <label>Porcentaje %</label>
-        <input type="number" id="porcUtilidad" value="5" min="0" max="20" step="0.1">
-      </div>
-      <div style="background:rgba(255,255,255,0.5); padding:0.5rem; border-radius:8px">
-        <div class="text-muted" style="font-size:0.75rem">Valor calculado</div>
-        <div style="font-weight:bold; color:var(--primary)" id="valorUtilidad">$0</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="glass card">
-    <div class="grid-4" style="text-align:center">
-      <div>
-        <div class="text-muted" style="font-size:0.75rem">Total Costos Directos</div>
-        <div style="font-weight:bold" id="resumenCostosDirectos">$0</div>
-      </div>
-      <div>
-        <div class="text-muted" style="font-size:0.75rem">Total AIU</div>
-        <div style="font-weight:bold; color:var(--accent)" id="resumenTotalAIU">$0</div>
-      </div>
-      <div>
-        <div class="text-muted" style="font-size:0.75rem">Costo Total Proyecto</div>
-        <div style="font-weight:bold; color:var(--primary)" id="resumenCostoTotal">$0</div>
-      </div>
-      <div>
-        <div class="text-muted" style="font-size:0.75rem">AIU sobre C. Directos</div>
-        <div style="font-weight:bold" id="resumenPorcentajeAIU">0%</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="glass card">
-    <h3>Detalle de Administración (sustento del %)</h3>
-    <textarea id="detalleAdmin" rows="3" style="width:100%" placeholder="Describa los conceptos incluidos: personal, oficina, servicios públicos, etc."></textarea>
-  </div>
-
-  <div class="flex-between mt-2">
-    <button type="button" class="btn btn-ghost" id="limpiarAIU">🗑️ Limpiar</button>
-    <button type="button" class="btn btn-primary" id="guardarAIU">💾 Guardar AIU</button>
-  </div>
-
-  <div class="glass card text-muted" style="font-size:0.85rem">
-    <strong>Nota:</strong> El AIU se calcula sobre el total de Costos Directos. Porcentajes sugeridos: Administración 8-12%, Imprevistos 1-5%, Utilidad 5-10%. Ajuste según el tipo y complejidad del proyecto.
-  </div>
-</div>
-    </section>
+    <!-- ===== RESUMEN ===== -->
     <section id="resumen" class="tab-content">
       <div class="glass-strong card">
-  <div class="card-header">
-    <div>
-      <h2>📊 Resumen, Gráficas y Cronograma</h2>
-      <p class="text-muted">Revise la coherencia de los totales. Actualice las gráficas y configure el cronograma.</p>
-    </div>
-    <button type="button" class="btn btn-primary" id="actualizarResumen">🔄 Actualizar</button>
-  </div>
-</div>
+        <div class="card-header">
+          <div>
+            <h2>📊 Resumen, Gráficas y Cronograma</h2>
+            <p class="text-muted">Revise la coherencia de los totales. Actualice las gráficas y configure el cronograma.</p>
+          </div>
+          <button type="button" class="btn btn-primary" id="actualizarResumen">🔄 Actualizar</button>
+        </div>
+      </div>
 
-<!-- Tarjetas de totales -->
-<div class="grid-4" style="margin-top:1.5rem">
-  <div class="glass card text-center">
-    <div class="text-muted" style="font-size:0.75rem">Costos Directos</div>
-    <div style="font-weight:bold; font-size:1.2rem; color:var(--primary)" id="resumenDirectos">$0</div>
-  </div>
-  <div class="glass card text-center">
-    <div class="text-muted" style="font-size:0.75rem">Total AIU</div>
-    <div style="font-weight:bold; font-size:1.2rem; color:var(--accent)" id="resumenAIU">$0</div>
-  </div>
-  <div class="glass card text-center">
-    <div class="text-muted" style="font-size:0.75rem">Estudios Previos</div>
-    <div style="font-weight:bold; font-size:1.2rem" id="resumenEstudios">$0</div>
-    <div class="text-muted" style="font-size:0.7rem" id="cantEstudios">0 estudios</div>
-  </div>
-  <div class="glass card text-center">
-    <div class="text-muted" style="font-size:0.75rem">Costo Total</div>
-    <div style="font-weight:bold; font-size:1.2rem; color:var(--primary)" id="resumenTotal">$0</div>
-  </div>
-</div>
+      <div class="grid-4 mt-2">
+        <div class="glass card text-center">
+          <div class="text-muted text-xs">Costos Directos</div>
+          <div class="resumen-valor color-primary" id="resumenDirectos">$0</div>
+        </div>
+        <div class="glass card text-center">
+          <div class="text-muted text-xs">Total AIU</div>
+          <div class="resumen-valor color-accent" id="resumenAIU">$0</div>
+        </div>
+        <div class="glass card text-center">
+          <div class="text-muted text-xs">Estudios Previos</div>
+          <div class="resumen-valor" id="resumenEstudios">$0</div>
+          <div class="text-muted text-xs" id="cantEstudios">0 estudios</div>
+        </div>
+        <div class="glass card text-center">
+          <div class="text-muted text-xs">Costo Total</div>
+          <div class="resumen-valor color-primary" id="resumenTotal">$0</div>
+        </div>
+      </div>
 
-<!-- Gráficas -->
-<div class="grid-2" style="margin-top:1.5rem">
-  <div class="glass card">
-    <h3>Distribución de Costos Directos</h3>
-    <canvas id="graficoCapítulos" height="250"></canvas>
-  </div>
-  <div class="glass card">
-    <h3>Resumen General de Costos</h3>
-    <canvas id="graficoResumen" height="250"></canvas>
-  </div>
-</div>
+      <div class="grid-2 mt-2">
+        <div class="glass card">
+          <h3>Distribución de Costos Directos</h3>
+          <canvas id="graficoCapítulos" height="250"></canvas>
+        </div>
+        <div class="glass card">
+          <h3>Resumen General de Costos</h3>
+          <canvas id="graficoResumen" height="250"></canvas>
+        </div>
+      </div>
 
-<!-- Cronograma -->
-<div class="glass-strong card" style="margin-top:1.5rem">
-  <h2>📅 Cronograma de Obra</h2>
-  <p class="text-muted">Ingrese la duración en meses y la fecha de inicio. El Gantt y la curva S se generan automáticamente.</p>
-  
-  <div class="grid-2" style="margin-top:1rem">
-    <div class="form-group">
-      <label>Fecha de inicio de obra</label>
-      <input type="date" id="fechaInicioCronograma">
-    </div>
-    <div class="form-group">
-      <label>Duración total (meses)</label>
-      <input type="number" id="duracionMeses" value="12" min="1" max="60">
-    </div>
-  </div>
-  <button type="button" class="btn btn-primary" id="generarCronograma">⚙️ Generar Cronograma</button>
-  
-  <div id="ganttContainer" style="margin-top:1.5rem; overflow-x:auto"></div>
-  
-  <div class="glass card" style="margin-top:1.5rem">
-    <h3>Curva S – Inversión acumulada</h3>
-    <canvas id="graficoCurvaS" height="250"></canvas>
-  </div>
-</div>
+      <div class="glass-strong card mt-2">
+        <h2>📅 Cronograma de Obra</h2>
+        <p class="text-muted">Ingrese la duración en meses y la fecha de inicio. El Gantt y la curva S se generan automáticamente.</p>
+        <div class="grid-2 mt-1">
+          <div class="form-group">
+            <label>Fecha de inicio de obra</label>
+            <input type="date" id="fechaInicioCronograma">
+          </div>
+          <div class="form-group">
+            <label>Duración total (meses)</label>
+            <input type="number" id="duracionMeses" value="12" min="1" max="60">
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="generarCronograma">⚙️ Generar Cronograma</button>
+        <div id="ganttContainer" class="mt-2"></div>
+        <div class="glass card mt-2">
+          <h3>Curva S – Inversión acumulada</h3>
+          <canvas id="graficoCurvaS" height="250"></canvas>
+        </div>
+      </div>
     </section>
+
+    <!-- ===== INFORME ===== -->
     <section id="informe" class="tab-content">
       <div class="no-print glass-strong card">
-  <div class="card-header">
-    <div>
-      <h2>📑 Informe PDF</h2>
-      <p class="text-muted">Vista previa del documento • Use el botón para guardar como PDF</p>
-    </div>
-    <button type="button" class="btn btn-primary" onclick="window.print()">🖨️ Imprimir / Descargar PDF</button>
-  </div>
-</div>
-
-<div id="informePreview" class="glass card" style="margin-top:1.5rem">
-  <!-- El contenido se genera con JavaScript -->
-</div>
+        <div class="card-header">
+          <div>
+            <h2>📑 Informe PDF</h2>
+            <p class="text-muted">Vista previa del documento • Use el botón para guardar como PDF</p>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="window.print()">🖨️ Imprimir / Descargar PDF</button>
+        </div>
+      </div>
+      <div id="informePreview" class="glass card mt-2"></div>
     </section>
   </main>
 
