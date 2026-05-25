@@ -581,3 +581,68 @@ tr:hover td {
     font-size: 16px;
   }
 }
+
+/* ========== MEJORAS RESPONSIVE PARA TEXTO ========== */
+@media (max-width: 768px) {
+  /* Evitar desbordamiento de texto en tarjetas, inputs y tablas */
+  .card, .glass, .glass-strong {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  input, select, textarea {
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  table, th, td {
+    word-break: break-word;
+  }
+
+  /* Ajustar tamaño de fuente para mejor lectura en móvil */
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Asegurar que los labels y textos no se corten */
+  label, .text-muted {
+    white-space: normal;
+  }
+
+  /* Scroll horizontal solo donde sea necesario (tablas) */
+  .gantt-container, #tablaComputos, #tablaCapitulos, table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Filas de estudios previos más compactas */
+  .fila-estudio {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  .fila-estudio input {
+    min-width: 0; /* evitar que inputs empujen contenedor */
+  }
+
+  /* Cabeceras de tarjetas más flexibles */
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
