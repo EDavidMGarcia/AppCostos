@@ -36,6 +36,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -44,9 +45,10 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
-  display: flex;
+  overflow-x: hidden;
 }
 
+/* ========== TIPOGRAFÍA ========== */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -92,11 +94,7 @@ a {
   transition: all var(--transition);
 }
 
-.glass-strong:hover {
-  box-shadow: 0 20px 48px rgba(0,0,0,0.1);
-}
-
-/* ========== SCROLLBAR MEJORADA ========== */
+/* ========== SCROLLBAR ========== */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -114,7 +112,7 @@ a {
   background: rgba(0,0,0,0.22);
 }
 
-/* ========== SIDEBAR PREMIUM ========== */
+/* ========== SIDEBAR ========== */
 .sidebar {
   width: 270px;
   background: var(--sidebar-bg);
@@ -160,12 +158,26 @@ a {
 .sidebar-header h2 {
   font-size: 18px;
   color: white;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: 0.02em;
 }
 
-/* ========== NAVEGACIÓN MEJORADA ========== */
+/* ========== OVERLAY MÓVIL ========== */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========== NAVEGACIÓN ========== */
 .tab-btn {
   width: 100%;
   display: flex;
@@ -181,6 +193,7 @@ a {
   font-weight: 500;
   text-align: left;
   background: transparent;
+  position: relative;
 }
 
 .tab-btn:hover {
@@ -195,10 +208,8 @@ a {
   color: white;
   opacity: 1;
   font-weight: 600;
-  box-shadow: 0 2px 12px rgba(230,180,34,0.15);
   border-left: 3px solid var(--accent);
   border-radius: 0 14px 14px 0;
-  padding-left: 0.65rem;
 }
 
 .tab-btn.active::after {
@@ -211,18 +222,22 @@ a {
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
 }
 
-/* ========== CONTENIDO PRINCIPAL ========== */
+/* ========== MAIN CONTENT ========== */
 .main-content {
   margin-left: 270px;
-  padding: 2.2rem 2.5rem;
   width: calc(100% - 270px);
-  max-width: 1300px;
-  transition: margin-left var(--transition), width var(--transition);
+  padding: 2.2rem;
+  transition: all var(--transition);
 }
 
+.main-content-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ========== ANIMACIONES ========== */
 .tab-content {
   display: none;
   animation: fadeSlideIn 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
@@ -243,7 +258,7 @@ a {
   }
 }
 
-/* ========== FORMULARIOS MEJORADOS ========== */
+/* ========== FORMULARIOS ========== */
 .form-group {
   margin-bottom: 1.2rem;
 }
@@ -253,15 +268,16 @@ a {
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0.35rem;
-  color: var(--text);
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 0.65rem 0.9rem;
   border: 1.5px solid rgba(0,0,0,0.08);
   border-radius: var(--radius-sm);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(8px);
   transition: all 0.2s ease;
@@ -269,74 +285,46 @@ input, select, textarea {
   color: var(--text);
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 4px var(--primary-glow);
   background: white;
 }
 
-/* ========== BOTONES MEJORADOS ========== */
+/* ========== BOTONES ========== */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0.6rem 1.4rem;
   border-radius: 14px;
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.2s ease;
-  letter-spacing: 0.01em;
-  position: relative;
-  overflow: hidden;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
-  box-shadow: 0 4px 14px rgba(26,109,94,0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(26,109,94,0.4);
 }
 
 .btn-secondary {
   background: white;
   color: var(--text);
   border: 1.5px solid rgba(0,0,0,0.08);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-secondary:hover {
-  background: #f9fafb;
-  border-color: rgba(0,0,0,0.15);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--text-muted);
 }
 
 .btn-ghost:hover {
   background: rgba(0,0,0,0.04);
-  color: var(--text);
-}
-
-.btn-danger {
-  background: #fee2e2;
-  color: #b91c1c;
-}
-
-.btn-danger:hover {
-  background: #fecaca;
-}
-
-.btn-sm {
-  padding: 0.35rem 0.9rem;
-  font-size: 0.8rem;
-  border-radius: 10px;
 }
 
 /* ========== TARJETAS ========== */
@@ -356,11 +344,17 @@ input:focus, select:focus, textarea:focus {
   gap: 1rem;
 }
 
-/* ========== TABLAS ESTILIZADAS ========== */
+/* ========== TABLAS ========== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
+  min-width: 600px;
 }
 
 th {
@@ -371,13 +365,11 @@ th {
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
 td {
   padding: 0.75rem;
   border-bottom: 1px solid rgba(0,0,0,0.04);
-  font-size: 0.9rem;
 }
 
 tr:hover td {
@@ -387,7 +379,7 @@ tr:hover td {
 /* ========== GRIDS ========== */
 .grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.8rem;
 }
 
@@ -406,20 +398,19 @@ tr:hover td {
 /* ========== UTILIDADES ========== */
 .text-center { text-align: center; }
 .text-right { text-align: right; }
-.text-muted { color: var(--text-muted); font-size: 0.85rem; }
+.text-muted { color: var(--text-muted); }
 .font-bold { font-weight: 600; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
+
 .flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .gap-1 { gap: 0.5rem; }
 .gap-2 { gap: 1rem; }
 
+/* ========== COSTO TOTAL ========== */
 .costo-total {
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
@@ -428,7 +419,6 @@ tr:hover td {
   text-align: center;
   font-size: 1.6rem;
   font-weight: 700;
-  box-shadow: 0 8px 20px rgba(26,109,94,0.3);
 }
 
 /* ========== GANTT ========== */
@@ -442,11 +432,9 @@ tr:hover td {
   height: 26px;
   background: linear-gradient(90deg, var(--primary), var(--primary-light));
   border-radius: 14px;
-  transition: width 0.4s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* ========== GRÁFICAS ========== */
+/* ========== CHARTS ========== */
 .chart-wrapper {
   position: relative;
   height: 260px;
@@ -456,31 +444,7 @@ tr:hover td {
   padding: 0.5rem;
 }
 
-/* ========== IMPRESIÓN ========== */
-@media print {
-  .sidebar, .no-print, .menu-toggle {
-    display: none !important;
-  }
-  .main-content {
-    margin: 0;
-    width: 100%;
-    padding: 0;
-  }
-  body {
-    background: white;
-    font-size: 12pt;
-  }
-  .glass, .glass-strong {
-    background: white;
-    box-shadow: none;
-    border: 1px solid #ccc;
-  }
-  .btn {
-    display: none;
-  }
-}
-
-/* ========== MENÚ TOGGLE (MÓVIL) ========== */
+/* ========== MENÚ MÓVIL ========== */
 .menu-toggle {
   display: none;
   position: fixed;
@@ -489,24 +453,17 @@ tr:hover td {
   z-index: 200;
   background: var(--primary);
   color: white;
-  border: none;
   width: 44px;
   height: 44px;
   border-radius: 14px;
   font-size: 1.6rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-lg);
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
 }
 
-.menu-toggle:hover {
-  background: var(--primary-light);
-}
-
-/* ========== RESPONSIVE MEJORADO ========== */
+/* ========== RESPONSIVE MOBILE ========== */
 @media (max-width: 768px) {
+
   .menu-toggle {
     display: flex;
   }
@@ -514,10 +471,6 @@ tr:hover td {
   .sidebar {
     transform: translateX(-100%);
     width: 260px;
-    top: 0;
-    left: 0;
-    z-index: 150;
-    transition: transform 0.3s ease;
   }
 
   .sidebar.open {
@@ -527,122 +480,93 @@ tr:hover td {
   .main-content {
     margin-left: 0 !important;
     width: 100% !important;
-    padding: 1.2rem;
-    padding-top: 4.5rem;
+    padding: 1rem;
+    padding-top: 5rem;
   }
 
-  .grid-2, .grid-3, .grid-4 {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
     grid-template-columns: 1fr;
   }
 
   .card-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
   }
 
   table {
     font-size: 0.8rem;
   }
 
-  th, td {
+  th,
+  td {
     padding: 0.5rem;
   }
 
-  .fila-estudio {
-    grid-template-columns: 1fr !important;
-    gap: 0.5rem !important;
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .chart-wrapper {
+    height: 200px;
   }
 
   .costo-total {
     font-size: 1.2rem;
     padding: 0.8rem 1rem;
   }
+
+  .btn {
+    width: 100%;
+  }
 }
 
-/* Ajuste para tablets */
+/* ========== TABLETS ========== */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .main-content {
-    margin-left: 230px;
-    width: calc(100% - 230px);
-    padding: 1.8rem;
-  }
 
   .sidebar {
     width: 230px;
-    padding: 1.2rem 0.6rem;
   }
 
-  .tab-btn span {
-    font-size: 0.8rem;
+  .main-content {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+    padding: 1.6rem;
   }
 
-  .sidebar-header h2 {
-    font-size: 16px;
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ========== MEJORAS RESPONSIVE PARA TEXTO ========== */
-@media (max-width: 768px) {
-  /* Evitar desbordamiento de texto en tarjetas, inputs y tablas */
-  .card, .glass, .glass-strong {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+/* ========== PRINT ========== */
+@media print {
+
+  .sidebar,
+  .menu-toggle,
+  .sidebar-overlay,
+  .btn {
+    display: none !important;
   }
 
-  input, select, textarea {
-    max-width: 100%;
-    word-break: break-word;
+  .main-content {
+    margin: 0;
+    width: 100%;
+    padding: 0;
   }
 
-  table, th, td {
-    word-break: break-word;
-  }
-
-  /* Ajustar tamaño de fuente para mejor lectura en móvil */
   body {
-    font-size: 15px;
+    background: white;
+    font-size: 12pt;
   }
 
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
-  /* Asegurar que los labels y textos no se corten */
-  label, .text-muted {
-    white-space: normal;
-  }
-
-  /* Scroll horizontal solo donde sea necesario (tablas) */
-  .gantt-container, #tablaComputos, #tablaCapitulos, table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Filas de estudios previos más compactas */
-  .fila-estudio {
-    grid-template-columns: 1fr !important;
-    gap: 0.5rem !important;
-  }
-
-  .fila-estudio input {
-    min-width: 0; /* evitar que inputs empujen contenedor */
-  }
-
-  /* Cabeceras de tarjetas más flexibles */
-  .card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .glass,
+  .glass-strong {
+    background: white;
+    box-shadow: none;
+    border: 1px solid #ccc;
   }
 }
